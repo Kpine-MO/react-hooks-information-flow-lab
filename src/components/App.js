@@ -5,6 +5,7 @@ import Header from "./Header";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [items, setItems] = useState(itemData);
 
   function handleDarkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
@@ -18,7 +19,7 @@ function App() {
           {isDarkMode ? "Dark" : "Light"} Mode
         </button>
       </header> */}
-      <Header onDarkModeClick={handleDarkModeClick}/>
+      <Header onDarkModeClick={handleDarkModeClick} isDarkMode={isDarkMode}/>
       <ShoppingList items={itemData} />
     </div>
   );
